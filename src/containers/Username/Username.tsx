@@ -4,8 +4,10 @@ import Card from "../../components/Card";
 const Username: React.FC = (): JSX.Element => {
   return (
     <div>
-      <h2> Hello from username component </h2>
-      <Card />
+      <Card>
+        <h1>Join chat</h1>
+        <input placeholder="Enter your username" />
+      </Card>
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./Card.module.css";
 
-const Card: React.FC = (): JSX.Element => {
-  return (
-    <div className={classes.Card}>
-      <h2> Hello from Card component </h2>
-    </div>
-  );
-};
+interface Props {
+  children: JSX.Element[] | JSX.Element;
+}
+
+const Card: React.FC<Props> = ({ children }): JSX.Element => (
+  <div className={classes.Card}>{children}</div>
+);
 
 export default Card;
