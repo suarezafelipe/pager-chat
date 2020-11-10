@@ -1,10 +1,14 @@
 import React from "react";
 import classes from "./Button.module.css";
 
-const Button: React.FC = (): JSX.Element => {
+interface Props {
+  text: string;
+}
+
+const Button: React.FC<Props> = ({ text }): JSX.Element => {
   return (
     <div className={classes.Container}>
-      <button className={classes.Button}>Next</button>;
+      <button className={classes.Button}>{text}</button>;
     </div>
   );
 };

@@ -9,8 +9,8 @@ const Username: React.FC = (): JSX.Element => {
     <Card>
       <div className={classes.Content}>
         <h1 className={classes.Title}>Join chat</h1>
-        <Input />
-        <Button />
+        <Input label="Please enter your username" />
+        <Button text="Next" />
       </div>
     </Card>
   );
