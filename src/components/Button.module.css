@@ -1,0 +1,22 @@
+.Container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Button {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  background-color: #ff8200;
+  color: white;
+  height: 4rem;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0 3rem;
+}
+
+.Button:focus {
+  border-color: #d39e00;
+  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
+  outline: 0;
+}
