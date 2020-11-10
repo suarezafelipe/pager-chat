@@ -3,12 +3,13 @@ import classes from "./Button.module.css";
 
 interface Props {
   text: string;
+  onClick: () => void;
 }
 
-const Button: React.FC<Props> = ({ text }): JSX.Element => {
+const Button: React.FC<Props> = ({ text, onClick }): JSX.Element => {
   return (
     <div className={classes.Container}>
-      <button className={classes.Button}>{text}</button>;
+      <button className={classes.Button} onClick={onClick}>{text}</button>;
     </div>
   );
 };
