@@ -15,6 +15,8 @@ const Chat: React.FC<Props> = ({ username }): JSX.Element => {
   const [messages, setMessages] = useState(new Array<Message>());
   const [typers, setTypers] = useState({});
 
+  // TODO move endpoint to environment variables
+
   const ENDPOINT = `https://pager-hiring.herokuapp.com/?username=${username}`;
   const socket = io(ENDPOINT);
 

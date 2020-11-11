@@ -12,6 +12,7 @@ const MessageInput: React.FC<Props> = ({ socket }): JSX.Element => {
   const postMessage = () => {
     if (currentMessage.startsWith("/gif ")) {
       const query = currentMessage.replace("/gif ", "");
+      // TODO move url and api key to environment variables
       axios
         .get(
           `https://api.giphy.com/v1/gifs/search?api_key=JY3AwDxWwJZ2LLLEqqQAANO74aaqedTT&q=${query}&limit=1&offset=0&rating=g&lang=en`
