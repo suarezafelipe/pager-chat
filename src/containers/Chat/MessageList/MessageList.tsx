@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { Message } from "../../../types/Message";
 import classes from "./MessageList.module.css";
@@ -8,6 +8,12 @@ interface Props {
 }
 
 const MessageList: React.FC<Props> = ({ messages }): JSX.Element => {
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [messages]);
+
   const renderBody = (message: Message) => {
     if (message.type === "text") {
       return <span className={classes.MessageText}>{message.text}</span>;
@@ -44,6 +50,7 @@ const MessageList: React.FC<Props> = ({ messages }): JSX.Element => {
   return (
     <div className={classes.MessageList}>
       <ul>{renderMessages()}</ul>
+      <div ref={divRef}></div>
     </div>
   );
 };
