@@ -40,7 +40,6 @@ const Chat: React.FC<Props> = ({ username }): JSX.Element => {
           <Typers typers={typers} />
         </div>
       </Card>
-      <button onClick={() => socket.disconnect()}>DISCONNECT</button>
     </>
   );
 };

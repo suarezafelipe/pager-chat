@@ -3,3 +3,51 @@
   overflow-y: auto;
   margin-bottom: 2.4rem;
 }
+
+.Grid {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  grid-template-rows: 2rem 1fr;
+  margin-bottom: 2.4rem;
+}
+
+.Avatar {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  width: 4rem;
+  height: 4rem;
+}
+
+.Avatar img {
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.TopRow {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.BottomRow {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.Username {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.Time {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: darkgrey;
+  padding-left: 0.8rem;
+}
+
+.MessageText {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.286;
+}
