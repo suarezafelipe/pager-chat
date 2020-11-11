@@ -7,3 +7,9 @@
   font-weight: 400;
   padding: 4rem 0;
 }
+
+.ButtonWrapper {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: row-reverse;
+}

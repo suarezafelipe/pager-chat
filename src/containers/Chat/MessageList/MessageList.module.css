@@ -1,0 +1,5 @@
+.MessageList {
+  height: calc(100vh - 20rem);
+  overflow-y: auto;
+  margin-bottom: 2.4rem;
+}

@@ -2,7 +2,8 @@ import React, { Dispatch, SetStateAction } from "react";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Input from "../../components/Input";
-import { CurrentScreen } from "../Enumerables";
+import { CurrentScreen } from "../../types/Enumerables";
+
 import classes from "./Username.module.css";
 
 interface Props {
@@ -27,7 +28,13 @@ const Username: React.FC<Props> = ({
             setUsername(e.target.value)
           }
         />
-        <Button text="Next" onClick={() => setScreen(CurrentScreen.Chat)} />
+        <div className={classes.ButtonWrapper}>
+          <Button
+            text="Next"
+            onClick={() => setScreen(CurrentScreen.Chat)}
+            isDisabled={username === ""}
+          />
+        </div>
       </div>
     </Card>
   );
