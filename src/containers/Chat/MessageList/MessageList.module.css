@@ -51,3 +51,7 @@
   font-weight: 400;
   line-height: 1.286;
 }
+
+.Image {
+  max-width: 32rem;
+}

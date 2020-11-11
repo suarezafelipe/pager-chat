@@ -12,7 +12,7 @@ const MessageList: React.FC<Props> = ({ messages }): JSX.Element => {
     if (message.type === "text") {
       return <span className={classes.MessageText}>{message.text}</span>;
     } else if (message.type === "image") {
-      return <img src={message.url} alt={message.alt}></img>;
+      return <img src={message.url} alt={message.alt} className={classes.Image} />;
     }
   };
 

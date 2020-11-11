@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "../../../../node_modules/axios/index";
 import Button from "../../../components/Button";
 import classes from "./MessageInput.module.css";
 
@@ -9,7 +10,23 @@ interface Props {
 const MessageInput: React.FC<Props> = ({ socket }): JSX.Element => {
   const [currentMessage, setCurrentMessage] = useState("");
   const postMessage = () => {
-    socket.emit("text-message", currentMessage);
+    if (currentMessage.startsWith("/gif ")) {
+      const query = currentMessage.replace("/gif ", "");
+      axios
+        .get(
+          `https://api.giphy.com/v1/gifs/search?api_key=JY3AwDxWwJZ2LLLEqqQAANO74aaqedTT&q=${query}&limit=1&offset=0&rating=g&lang=en`
+        )
+        .then(({ data }) => {
+          socket.emit("image-message", {
+            url: data.data[0].images.downsized_medium.url,
+            alt: query,
+          });
+        })
+        .catch((error) => console.log(error));
+    } else {
+      socket.emit("text-message", currentMessage);
+    }
+
     setCurrentMessage("");
   };
 
