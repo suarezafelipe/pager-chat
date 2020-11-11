@@ -1,18 +1,21 @@
-.Container {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
 .Button {
   font-weight: 600;
   font-size: 1.4rem;
-  margin-bottom: 4rem;
-  background-color: #ff8200;
-  color: white;
   height: 4rem;
   border: none;
   border-radius: 0.4rem;
   padding: 0 3rem;
+}
+
+.Active {
+  background-color: #ff8200;
+  color: white;
+}
+
+.Disabled {
+  background-color: #ffffff;
+  color: darkgrey;
+  height: 4rem;
 }
 
 .Button:focus {
