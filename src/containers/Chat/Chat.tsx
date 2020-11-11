@@ -12,8 +12,6 @@ interface Props {
 }
 
 const Chat: React.FC<Props> = ({ username }): JSX.Element => {
-  const [userConnected, setUserConnected] = useState("");
-  const [userDisconnected, setUserDisconnected] = useState("");
   const [messages, setMessages] = useState(new Array<Message>());
   const [typers, setTypers] = useState({});
 
@@ -21,8 +19,6 @@ const Chat: React.FC<Props> = ({ username }): JSX.Element => {
   const socket = io(ENDPOINT);
 
   useEffect(() => {
-    socket.on("user-connected", (username: string) => setUserConnected(username));
-    socket.on("user-disconnected", (username: string) => setUserDisconnected(username));
     socket.on("is-typing", (typers: Object) => setTypers(typers));
     socket.on("message", (message: Message) =>
       setMessages((previousMessages) => [...previousMessages, message])
