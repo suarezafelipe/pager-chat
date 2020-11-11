@@ -27,6 +27,7 @@ const Chat: React.FC<Props> = ({ username }): JSX.Element => {
     socket.on("message", (message: Message) =>
       setMessages((previousMessages) => [...previousMessages, message])
     );
+    socket.emit("typing", false);
 
     return () => socket.disconnect();
   }, []);
