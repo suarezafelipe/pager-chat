@@ -35,14 +35,21 @@ const MessageInput: React.FC<Props> = ({ socket }): JSX.Element => {
     socket.emit("typing", isTyping);
   };
 
+  const onKeyPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      postMessage();
+    }
+  };
+
   return (
     <div className={classes.MessageInput}>
       <input
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setCurrentMessage(e.target.value)
-        }
-        onFocus={() => isTyping(true)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          setCurrentMessage(e.target.value);
+          isTyping(true);
+        }}
         onBlur={() => isTyping(false)}
+        onKeyPress={onKeyPressHandler}
         value={currentMessage}
       />
       <Button
