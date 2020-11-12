@@ -29,6 +29,7 @@ const MessageInput: React.FC<Props> = ({ socket }): JSX.Element => {
     }
 
     setCurrentMessage("");
+    isTyping(false);
   };
 
   const isTyping = (isTyping: boolean) => {
