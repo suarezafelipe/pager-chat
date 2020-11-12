@@ -7,22 +7,14 @@ interface Props {
   isDisabled: boolean;
 }
 
-const Button: React.FC<Props> = ({
-  text,
-  onClick,
-  isDisabled,
-}): JSX.Element => {
-  return (
-    <button
-      className={`${classes.Button} ${
-        isDisabled ? classes.Disabled : classes.Active
-      }`}
-      onClick={onClick}
-      disabled={isDisabled}
-    >
-      {text}
-    </button>
-  );
-};
+const Button: React.FC<Props> = ({ text, onClick, isDisabled }): JSX.Element => (
+  <button
+    className={`${classes.Button} ${isDisabled ? classes.Disabled : classes.Active}`}
+    onClick={onClick}
+    disabled={isDisabled}
+  >
+    {text}
+  </button>
+);
 
 export default Button;

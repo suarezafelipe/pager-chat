@@ -16,7 +16,6 @@ const Chat: React.FC<Props> = ({ username }): JSX.Element => {
   const [typers, setTypers] = useState({});
 
   // TODO move endpoint to environment variables
-
   const ENDPOINT = `https://pager-hiring.herokuapp.com/?username=${username}`;
   const socket = io(ENDPOINT);
 
@@ -31,15 +30,13 @@ const Chat: React.FC<Props> = ({ username }): JSX.Element => {
   }, []);
 
   return (
-    <>
-      <Card>
-        <div className={classes.Container}>
-          <MessageList messages={messages} />
-          <MessageInput socket={socket} />
-          <Typers typers={typers} />
-        </div>
-      </Card>
-    </>
+    <Card>
+      <div className={classes.Container}>
+        <MessageList messages={messages} />
+        <MessageInput socket={socket} />
+        <Typers typers={typers} />
+      </div>
+    </Card>
   );
 };
 
